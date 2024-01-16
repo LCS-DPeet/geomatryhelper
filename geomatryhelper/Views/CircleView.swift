@@ -11,14 +11,16 @@ struct CircleView: View {
     
     //MARK: Stored Propeties
     @State var radius = 10.0
+    @State var currentCircle = Circle(radius: 10.0)
     
     //MARK: Computed Properties
     var body: some View {
         VStack {
-            Text("\(radius)")
+            Text("\(currentCircle.radius)")
                 .font(.largeTitle)
             
             Slider(value: $radius, in: 0...100)
+            Slider(value: $currentCircle.radius, in: 0...100)
             
         }
     .padding()
